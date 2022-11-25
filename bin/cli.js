@@ -1,11 +1,8 @@
 #!/usr/bin/env node
-
 const program = require('commander')
 const chalk = require('chalk')
 const COMMAND_LIST = require('../src/command-config')
-
-console.log("i'm a cli")
-
+const pkg = require('../package.json')
 
 // help命令 把example显示出去
 const help = () => {
@@ -51,4 +48,4 @@ COMMAND_LIST.reduce(registerAction, program)
 
 program.on('-h', help)
 program.on('--help', help)
-program.version('1.0.0').parse(process.argv)
+program.version(`vue-template-cli v${pkg.version}`).parse(process.argv)
