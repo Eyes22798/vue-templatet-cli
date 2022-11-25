@@ -1,0 +1,52 @@
+{
+  "name": "mycli-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "mycli": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version -a",
+    "major": "standard-version --release-as major",
+    "minor": "standard-version --release-as minor",
+    "patch": "standard-version --release-as patch",
+    "alpha": "standard-version --prerelease alpha",
+    "beta": "standard-version --prerelease beta",
+    "commit": "git-cz"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "chalk": "4.1.1",
+    "commander": "^9.4.1",
+    "commitlint": "^17.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "download-git-repo": "^3.0.2",
+    "eslint": "^8.28.0",
+    "husky": "^8.0.2",
+    "inquirer": "^8.0.0",
+    "log-symbols": "4",
+    "ora": "5.3.0",
+    "standard-version": "^9.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
