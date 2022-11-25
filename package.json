@@ -1,6 +1,6 @@
 {
   "name": "mycli-demo",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -27,6 +27,7 @@
     "commitlint": "^17.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "download-git-repo": "^3.0.2",
+    "ejs": "^3.1.8",
     "eslint": "^8.28.0",
     "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
@@ -34,6 +35,7 @@
     "inquirer": "^8.0.0",
     "log-symbols": "4",
     "ora": "5.3.0",
+    "rimraf": "^3.0.2",
     "standard-version": "^9.5.0"
   },
   "husky": {
