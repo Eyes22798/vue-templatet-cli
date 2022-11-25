@@ -1,16 +1,22 @@
 const inquirer = require('inquirer')
 const ora = require('ora')
+const chalk = require('chalk')
 const download = require('download-git-repo')
 const { errLog, successLog } = require('../utils/log')
 
 const create = (projectName, options) => {
-  console.log(projectName, options)
+  if (projectName.indexOf('@eyes22798/') !== 0) {
+    console.log('Please start the package name with ' + chalk.cyan('@eyes22798/'))
+    console.log('Example: ' + chalk.cyan('@eyes22798/custom-button'))
+    return
+  }
+
   inquirer.prompt([
     {
       type: 'list',
       name: 'frameTemplate',
       message: '请选择框架类型',
-      choices: ['Vue3', 'Vue2', 'React']
+      choices: ['Vue2', 'Vue3']
     }
   ]).then((answer) => {
     const spinner = ora()
