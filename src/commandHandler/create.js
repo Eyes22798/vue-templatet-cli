@@ -77,14 +77,14 @@ const create = (projectName, options) => {
           memFsEditor.commit(() => {
             INJECT_FILES.forEach((file) => {
               successLog(`${projectName}项目初始化完成`)
+
+              projectGitInit(projectName)
             })
           })
 
           // 删除临时文件
           fse.remove(downloadPath)
           process.chdir(projectPath)
-
-          projectGitInit(projectName)
         })
       }
     })
